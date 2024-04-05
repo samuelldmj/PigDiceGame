@@ -21,21 +21,10 @@ const btnhold = document.querySelector('.btn--hold');
 const currentScore0Element = document.getElementById('current--0');
 const currentScore1Element = document.getElementById('current--1');
 
-//initializing the current score, ensuring it is stored
-let currentScore = 0;
-
-//initializing active player
-let activePlayer = 0;
-
 //active player pane
 const player0element = document.querySelector('.player--0');
 const player1element = document.querySelector('.player--1');
 
-//Holding the big score
-const scores = [0, 0];
-
-//checking if playing is on
-let playing = true;
 
 //switching between player function,  so as to maintain DRY
 let switchPlayer = function () {
@@ -52,9 +41,49 @@ let switchPlayer = function () {
 
 };
 
+//resetting the game
+let scores, playing, currentScore, activePlayer;
+
+const newGame = function () {
+    //Holding the big score
+    scores = [0, 0];
+
+    //checking if playing is on
+    playing = true;
+
+    //initializing the current score, ensuring it is stored
+    currentScore = 0;
+
+    //initializing active player
+    activePlayer = 0;
+
+    //hiding the dice image
+    diceElement.classList.add('hidden');
+
+    //resetting the current score
+    //setting the score elements to a default value 0
+    currentScore0Element.textContent = 0;
+    currentScore1Element.textContent = 0;
+
+
+    //resetting the big score
+    score0Element.textContent = 0;
+    score1Element.textContent = 0;
+
+    //removing winner background
+    player0element.classList.remove('player--winner');
+    player1element.classList.remove('player--winner');
+
+    //removing active background
+    player0element.classList.add('player--active');
+    player1element.classList.remove('player--active');
+
+}
+newGame();
+
 
 //making the dice roll on clicking using the event listner
-btnRoll.addEventListener('click', function () {
+let Roll = btnRoll.addEventListener('click', function () {
     if (playing) {
 
         //unhiding the dice image when the rolling button is clicked
@@ -75,6 +104,7 @@ btnRoll.addEventListener('click', function () {
             document.querySelector(`#current--${activePlayer}`).textContent = currentScore;
 
         } else {
+
             //switch player
             switchPlayer();
 
@@ -83,8 +113,7 @@ btnRoll.addEventListener('click', function () {
     }
 })
 
-
-btnhold.addEventListener('click', function () {
+let hold = btnhold.addEventListener('click', function () {
     if (playing) {
 
         //add current score to the big score
@@ -95,7 +124,7 @@ btnhold.addEventListener('click', function () {
         if (scores[activePlayer] >= 20) {
             playing = false;
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
-            document.querySelector(`.player--${activePlayer}`).classList.add('player--active');
+            document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
             diceElement.classList.add('hidden');
         } else {
             //switch player
@@ -105,6 +134,6 @@ btnhold.addEventListener('click', function () {
 
 })
 
-
-
+//new game button
+btnNew.addEventListener('click', newGame);
 
