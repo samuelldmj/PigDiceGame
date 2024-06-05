@@ -3,12 +3,11 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
@@ -36,8 +35,9 @@ main {
   display: flex;
 }
 
+/* PLAYER SECTION */
 .player {
-  flex: 50%;
+  flex: 1;
   padding: 9rem;
   display: flex;
   flex-direction: column;
@@ -45,9 +45,7 @@ main {
   transition: all 0.75s;
 }
 
-/* ELEMENTS */
 .name {
-  position: relative;
   font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -103,7 +101,7 @@ main {
   display: none;
 }
 
-/* ABSOLUTE POSITIONED ELEMENTS */
+/* BUTTONS */
 .btn {
   position: absolute;
   left: 50%;
@@ -117,11 +115,9 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
-
   background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
