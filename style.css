@@ -227,6 +227,9 @@ main {
   .player {
     padding: 4rem;
   }
+  .player--0 {
+    margin-top: 7rem;
+  }
 
   .name {
     font-size: 3rem;
