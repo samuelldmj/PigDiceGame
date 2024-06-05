@@ -33,6 +33,7 @@ main {
   border-radius: 9px;
   overflow: hidden;
   display: flex;
+  flex-direction: row;
 }
 
 /* PLAYER SECTION */
@@ -164,4 +165,110 @@ main {
 .player--winner .name {
   font-weight: 700;
   color: #c7365f;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablets (768px and up) */
+@media (max-width: 768px) {
+  main {
+    width: 90rem;
+    height: 50rem;
+    flex-direction: column;
+  }
+
+  .player {
+    padding: 6rem;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .score {
+    font-size: 7rem;
+  }
+
+  .current {
+    width: 80%;
+  }
+
+  .current-score {
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 0.6rem 2rem;
+  }
+
+  .btn--roll {
+    top: 30rem;
+  }
+  .btn--hold {
+    top: 36rem;
+  }
+
+  .dice {
+    top: 12rem;
+    height: 8rem;
+  }
+}
+
+/* Mobile Phones (480px and up) */
+@media (max-width: 480px) {
+  main {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .player {
+    padding: 4rem;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .score {
+    font-size: 5rem;
+  }
+
+  .current {
+    width: 90%;
+  }
+
+  .current-score {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+    position: relative;
+    left: 0;
+    transform: none;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .btn--new {
+    top: auto;
+    margin-top: 2rem;
+  }
+
+  .btn--roll {
+    top: auto;
+  }
+
+  .btn--hold {
+    top: auto;
+  }
+
+  .dice {
+    top: 10rem;
+    height: 6rem;
+  }
 }
