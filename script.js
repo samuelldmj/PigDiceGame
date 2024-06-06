@@ -1,3 +1,9 @@
+
+
+
+
+
+
 'use strict';
 
 //getting the score elements from DOM
@@ -48,36 +54,20 @@ const init = function () {
   currentScore0Element.textContent = 0;
   currentScore1Element.textContent = 0;
 
-
-    //resetting the big score
-    score0Element.textContent = 0;
-    score1Element.textContent = 0;
-
-    //removing winner background
+  diceElement.classList.add('hidden');
   player0Element.classList.remove('player--winner');
   player1Element.classList.remove('player--winner');
-
-    //removing active background
   player0Element.classList.add('player--active');
   player1Element.classList.remove('player--active');
+};
 
-}
-newGame();
+init();
 
-
-//making the dice roll on clicking using the event listner
 btnRoll.addEventListener('click', function () {
-    if (playing) {
-
-        //unhiding the dice image when the rolling button is clicked
-        diceElement.classList.remove('hidden');
-
-        //generating random numbers from 1 to 6 and appending it to the dice images
-        let dice = Math.trunc(Math.random() * 6) + 1;
-
-        //This make the image change dynamically
-        diceElement.src = `dice-${dice}.png`;
-
+  if (playing) {
+    diceElement.classList.remove('hidden');
+    const dice = Math.trunc(Math.random() * 6) + 1;
+    diceElement.src = `dice-${dice}.png`;
 
     if (dice !== 1) {
       currentScore += dice;
@@ -90,10 +80,10 @@ btnRoll.addEventListener('click', function () {
 });
 
 btnHold.addEventListener('click', function () {
-    if (playing) {
-
-        //add current score to the big score
-        scores[activePlayer] += currentScore;
+  if (playing) {
+    scores[activePlayer] += currentScore;
+    document.querySelector(`#score--${activePlayer}`).textContent =
+      scores[activePlayer];
 
     if (scores[activePlayer] >= 100) {
       playing = false;
