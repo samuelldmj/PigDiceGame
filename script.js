@@ -54,12 +54,12 @@ const init = function () {
     score1Element.textContent = 0;
 
     //removing winner background
-    player0element.classList.remove('player--winner');
-    player1element.classList.remove('player--winner');
+  player0Element.classList.remove('player--winner');
+  player1Element.classList.remove('player--winner');
 
     //removing active background
-    player0element.classList.add('player--active');
-    player1element.classList.remove('player--active');
+  player0Element.classList.add('player--active');
+  player1Element.classList.remove('player--active');
 
 }
 newGame();
@@ -89,7 +89,7 @@ btnRoll.addEventListener('click', function () {
   }
 });
 
-btnhold.addEventListener('click', function () {
+btnHold.addEventListener('click', function () {
     if (playing) {
 
         //add current score to the big score
