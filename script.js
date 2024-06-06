@@ -1,9 +1,4 @@
 
-
-
-
-
-
 'use strict';
 
 //getting the score elements from DOM

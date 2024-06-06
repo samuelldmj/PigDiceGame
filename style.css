@@ -275,3 +275,124 @@ main {
     height: 6rem;
   }
 }
+
+/* MEDIA QUERIES */
+
+/* Tablets (768px and up) */
+@media (max-width: 768px) {
+  main {
+    width: 90rem;
+    height: 50rem;
+    flex-direction: column;
+  }
+
+  .player {
+    padding: 6rem;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .score {
+    font-size: 7rem;
+  }
+
+  .current {
+    width: 80%;
+  }
+
+  .current-score {
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 0.6rem 2rem;
+  }
+
+  .btn--roll {
+    top: 30rem;
+  }
+
+  .btn--hold {
+    top: 36rem;
+  }
+
+  .dice {
+    top: 12rem;
+    height: 8rem;
+  }
+}
+
+/* Mobile Phones (480px and up) */
+
+/* Mobile Phones (480px and up) */
+@media (max-width: 480px) {
+  main {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .player {
+    padding: 4rem;
+  }
+
+  .player--0 {
+    margin-top: 7rem;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .score {
+    font-size: 5rem;
+  }
+
+  .current {
+    width: 90%;
+  }
+
+  .current-score {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+    top: auto;
+  }
+
+  .btn--new {
+    top: auto;
+    margin-top: 2rem;
+  }
+
+  .btn--roll {
+    top: auto;
+  }
+
+  .btn--hold {
+    top: auto;
+  }
+
+  .dice {
+    position: absolute;
+    top: calc(50% - 8rem);
+    /* Adjust the top position to center vertically */
+    left: calc(50% 6rem);
+    /* Adjust the left position to center horizontally */
+    height: 6rem;
+    /* Set the height */
+    width: auto;
+    /* Let the width adjust automatically based on height */
+    z-index: 1;
+    /* Ensure the dice appears above other elements */
+  }
+}
